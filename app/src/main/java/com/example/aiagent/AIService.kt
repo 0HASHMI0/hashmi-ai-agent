@@ -58,15 +58,31 @@ class AIService : AccessibilityService() {
     }
 
     private suspend fun handleWhatsApp(event: AccessibilityEvent, rootNode: AccessibilityNodeInfo) {
-        val chatText = getWhatsAppChatText(rootNode)
-        val response = aiModel.generateResponse(chatText)
-        sendWhatsAppMessage(response, rootNode)
+        handleMessagingApp(rootNode, 
+            "com.whatsapp:id/entry", 
+            "com.whatsapp:id/send")
     }
 
     private suspend fun handleWeChat(event: AccessibilityEvent, rootNode: AccessibilityNodeInfo) {
-        val chatText = getWeChatChatText(rootNode)
-        val response = aiModel.generateResponse(chatText)
-        sendWeChatMessage(response, rootNode)
+        handleMessagingApp(rootNode,
+            "com.tencent.mm:id/chatting_content_et",
+            "com.tencent.mm:id/anv")
+    }
+
+    private suspend fun handleMessagingApp(
+        rootNode: AccessibilityNodeInfo,
+        inputFieldId: String,
+        sendButtonId: String
+    ) {
+        try {
+            val chatText = extractChatText(rootNode, inputFieldId)
+            val response = aiModel.generateResponse(chatText)
+            sendMessage(rootNode, inputFieldId, sendButtonId, response)
+        } catch (e: Exception) {
+            // Log error
+        } finally {
+            rootNode.recycle()
+        }
     }
 
     private fun getWhatsAppChatText(node: AccessibilityNodeInfo): String {
@@ -84,21 +100,20 @@ class AIService : AccessibilityService() {
         return inputField?.text?.toString() ?: ""
     }
 
-    private fun sendWhatsAppMessage(message: String, node: AccessibilityNodeInfo) {
-        val sendButton = node.findAccessibilityNodeInfosByViewId("com.whatsapp:id/send")?.firstOrNull()
-        sendButton?.let {
-            val inputField = node.findAccessibilityNodeInfosByViewId("com.whatsapp:id/entry")?.first()
+    private fun sendMessage(
+        node: AccessibilityNodeInfo,
+        inputFieldId: String,
+        sendButtonId: String,
+        message: String
+    ) {
+        try {
+            val inputField = node.findAccessibilityNodeInfosByViewId(inputFieldId)?.firstOrNull()
+            val sendButton = node.findAccessibilityNodeInfosByViewId(sendButtonId)?.firstOrNull()
+            
             inputField?.text = message
-            sendButton.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-        }
-    }
-
-    private fun sendWeChatMessage(message: String, node: AccessibilityNodeInfo) {
-        val sendButton = node.findAccessibilityNodeInfosByViewId("com.tencent.mm:id/anv")?.firstOrNull()
-        sendButton?.let {
-            val inputField = node.findAccessibilityNodeInfosByViewId("com.tencent.mm:id/chatting_content_et")?.first()
-            inputField?.text = message
-            sendButton.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+            sendButton?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        } finally {
+            node.recycle()
         }
     }
 
@@ -133,65 +148,51 @@ class AIService : AccessibilityService() {
     private val excelGenerator by lazy { ExcelGenerator(this) }
 
     private suspend fun performAction(response: String, rootNode: AccessibilityNodeInfo) {
-        // Learn from this interaction
-        userPrefs.learnBehavior("Action performed: $response")
-        
-        when {
-            response.startsWith("play music:") -> {
-                val uri = Uri.parse(response.removePrefix("play music:"))
-                musicController.play(uri)
+        try {
+            userPrefs.learnBehavior("Action performed: $response")
+            
+            when {
+                response.startsWith("play music:") -> musicController.play(
+                    Uri.parse(response.removePrefix("play music:")))
+                response == "pause music" -> musicController.pause()
+                response == "resume music" -> musicController.resume()
+                response.startsWith("volume:") -> musicController.setVolume(
+                    response.removePrefix("volume:").toFloat())
+                response.startsWith("browse:") -> webBrowser.openUrl(
+                    response.removePrefix("browse:"))
+                response.startsWith("toggle ") -> phoneController.toggleFeature(
+                    response.removePrefix("toggle "))
+                response.startsWith("process image:") -> processImageCommand(
+                    response.removePrefix("process image:"), rootNode)
+                response.startsWith("scrape:") -> scrapeCommand(
+                    response.removePrefix("scrape:"), rootNode)
+                response.startsWith("create excel:") -> excelCommand(
+                    response.removePrefix("create excel:"), rootNode)
+                response.startsWith("http") -> webBrowser.openUrl(response)
+                else -> rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.text = response
             }
-            response.startsWith("browse:") -> {
-                val url = response.removePrefix("browse:")
-                webBrowser.openUrl(url)
-            }
-            response.startsWith("toggle ") -> {
-                val feature = response.removePrefix("toggle ")
-                phoneController.toggleFeature(feature)
-            }
-            response.startsWith("process image:") -> {
-                val imagePath = response.removePrefix("process image:")
-                val imageBytes = File(imagePath).readBytes()
-                val result = multimodalProcessor.processImage(imageBytes)
-                rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.text = result
-            }
-            response.startsWith("scrape:") -> {
-                val url = response.removePrefix("scrape:")
-                val content = webScraper.scrape(url)
-                rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.text = content
-            }
-            response.startsWith("create excel:") -> {
-                val parts = response.removePrefix("create excel:").split("|")
-                val fileName = parts[0]
-                val data = parts.drop(1).map { it.split(",") }
-                val file = excelGenerator.createExcelFile(data, fileName)
-                rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.text = "Excel created: ${file.absolutePath}"
-            }
-            else -> {
-                // Default action for unrecognized commands
-                if (response.startsWith("http")) {
-                    webBrowser.openUrl(response)
-                }
-            }
+        } finally {
+            rootNode.recycle()
         }
     }
-            response == "pause music" -> {
-                musicController.pause()
-            }
-            response == "resume music" -> {
-                musicController.resume()
-            }
-            response.startsWith("volume:") -> {
-                val level = response.removePrefix("volume:").toFloat()
-                musicController.setVolume(level)
-            }
-            else -> {
-                // Default action - type text if possible
-                rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.let { input ->
-                    input.text = response
-                }
-            }
-        }
+
+    private suspend fun processImageCommand(path: String, rootNode: AccessibilityNodeInfo) {
+        val imageBytes = File(path).readBytes()
+        val result = multimodalProcessor.processImage(imageBytes)
+        rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.text = result
+    }
+
+    private suspend fun scrapeCommand(url: String, rootNode: AccessibilityNodeInfo) {
+        val content = webScraper.scrape(url)
+        rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.text = content
+    }
+
+    private suspend fun excelCommand(command: String, rootNode: AccessibilityNodeInfo) {
+        val parts = command.split("|")
+        val fileName = parts[0]
+        val data = parts.drop(1).map { it.split(",") }
+        val file = excelGenerator.createExcelFile(data, fileName)
+        rootNode.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.text = "Excel created: ${file.absolutePath}"
     }
 
     override fun onInterrupt() {
