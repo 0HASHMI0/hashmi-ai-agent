@@ -1,0 +1,38 @@
+{
+    "ai_settings": {
+        "mode": "local",
+        "local_model": {
+            "model_name": "bert-base-uncased",
+            "model_dir": "models"
+        },
+        "api_settings": {
+            "api_key": "YOUR_API_KEY",
+            "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+        }
+    },
+    "web_scraper_settings": {
+        "mode": "mobile",
+        "appium": {
+            "app_path": "path/to/your/app.apk",
+            "device_name": "Pixel_3a_API_30",
+            "platform_version": "10"
+        },
+        "playwright": {
+            "browser": "chromium",
+            "headless": true,
+            "viewport": {
+                "width": 1280,
+                "height": 720
+            }
+        }
+    },
+    "report_settings": {
+        "output_dir": "reports",
+        "file_name": "scraped_data",
+        "format": "excel"
+    },
+    "logging": {
+        "log_level": "INFO",
+        "log_file": "scraping.log"
+    }
+}

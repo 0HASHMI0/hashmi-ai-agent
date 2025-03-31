@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.4.2"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    implementation 'ai.huggingface:tokenization:0.1.1'
+    implementation 'ai.huggingface:transformers:0.1.1'
+    implementation 'io.appium:java-client:8.5.1'
+    implementation 'com.microsoft.playwright:playwright-java:1.30.0'
+}

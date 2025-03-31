@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AI Agent</string>
+    <string name="accessibility_service_description">AI Agent service that helps automate tasks</string>
+</resources>
