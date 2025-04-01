@@ -6,31 +6,10 @@ plugins {
 android {
     namespace 'com.example.aiagent'
     compileSdk 34
-    // buildToolsVersion "34.0.0" // Commented out to try version 33.0.0
-    buildToolsVersion "33.0.0"
-
-    repositories {
-        mavenCentral()
-        maven { url 'https://maven.pkg.jetbrains.com/kotlin/public' }
-        maven {
-            url 'https://maven.pkg.github.com/libpd/android'
-            credentials {
-                username System.getenv('GITHUB_USERNAME')
-                password System.getenv('GITHUB_TOKEN')
-            }
-        }
-        maven {
-            url 'https://maven.pkg.github.com/yakami129/huggingface-java-sdk'
-            credentials {
-                username System.getenv('GITHUB_USERNAME')
-                password System.getenv('GITHUB_TOKEN')
-            }
-        }
-    }
 
     defaultConfig {
         applicationId "com.example.aiagent"
-        minSdk 24
+        minSdk 26
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -53,11 +32,22 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.5.3'
+        kotlinCompilerExtensionVersion '1.6.5' // Updated version
     }
 }
 
+repositories {
+    google()
+    mavenCentral()
+}
+
 dependencies {
+    // Replace Huggingface Java SDK with TensorFlow Lite for AI integration
+    implementation 'org.tensorflow:tensorflow-lite:2.15.0'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.15.0'
+
+    // Add TarsosDSP for audio processing
+
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
@@ -71,20 +61,10 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.8.2'
     debugImplementation 'androidx.compose.ui:ui-tooling'
 
-    // For AI model integration
-    implementation 'org.tensorflow:tensorflow-lite:2.14.0'
-    implementation 'org.tensorflow:tensorflow-lite-gpu:2.14.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
-    implementation 'io.github.yakami129:huggingface-java-sdk:0.5.0' // Switched to community fork
-    implementation 'androidx.documentfile:documentfile:1.0.1'
-
     // For voice and media
     implementation 'androidx.media:media:1.7.0'
     implementation 'com.google.android.exoplayer:exoplayer:2.19.1'
     implementation 'com.google.android.exoplayer:extension-mediasession:2.19.1'
-
-    // For audio processing
-    implementation 'io.github.libpd.android:pd-core:0.50' // Updated to official fork artifact
 
     // Preferences DataStore
     implementation 'androidx.datastore:datastore-preferences:1.1.1'

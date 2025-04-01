@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.example.aiagent.app-merged_res-63:/xml_aiservice_config.xml.flat",
+        "source": "com.example.aiagent.app-main-65:/xml/aiservice_config.xml"
+    }
+]
