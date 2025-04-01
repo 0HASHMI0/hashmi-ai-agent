@@ -12,6 +12,20 @@ android {
     repositories {
         mavenCentral()
         maven { url 'https://maven.pkg.jetbrains.com/kotlin/public' }
+        maven {
+            url 'https://maven.pkg.github.com/libpd/android'
+            credentials {
+                username System.getenv('GITHUB_USERNAME')
+                password System.getenv('GITHUB_TOKEN')
+            }
+        }
+        maven {
+            url 'https://maven.pkg.github.com/yakami129/huggingface-java-sdk'
+            credentials {
+                username System.getenv('GITHUB_USERNAME')
+                password System.getenv('GITHUB_TOKEN')
+            }
+        }
     }
 
     defaultConfig {
