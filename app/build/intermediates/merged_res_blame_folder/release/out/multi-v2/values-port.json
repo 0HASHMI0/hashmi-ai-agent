@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.aiagent.app-mergeReleaseResources-58:/values-port/values-port.xml",
+            "outputFile": "com.example.aiagent.app-mergeReleaseResources-64:/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\8.13\\transforms\\8a03777fddc22cbd525872c347d349c4\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\Administrator\\.gradle\\caches\\8.13\\transforms\\bdd0d69c8759240ef9163856d067ebeb\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

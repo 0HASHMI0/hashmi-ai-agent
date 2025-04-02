@@ -1,66 +1,72 @@
-com.example.aiagent.app-jetified-ui-tooling-preview-release-0 C:\Users\Administrator\.gradle\caches\8.13\transforms\0075d1348c05c775b44a381efbd4345a\transformed\jetified-ui-tooling-preview-release\res
-com.example.aiagent.app-jetified-material-release-1 C:\Users\Administrator\.gradle\caches\8.13\transforms\031471977198df6ea327ed86e9134521\transformed\jetified-material-release\res
-com.example.aiagent.app-jetified-profileinstaller-1.3.0-2 C:\Users\Administrator\.gradle\caches\8.13\transforms\04c1701b074ca921664f9e992b2e7779\transformed\jetified-profileinstaller-1.3.0\res
-com.example.aiagent.app-jetified-datastore-release-3 C:\Users\Administrator\.gradle\caches\8.13\transforms\0c43bc03b09243c4a1014a5364790cc1\transformed\jetified-datastore-release\res
-com.example.aiagent.app-jetified-datastore-preferences-release-4 C:\Users\Administrator\.gradle\caches\8.13\transforms\0d6626991b9b0b923042551f61d397a8\transformed\jetified-datastore-preferences-release\res
-com.example.aiagent.app-jetified-animation-release-5 C:\Users\Administrator\.gradle\caches\8.13\transforms\0fe22dc3974969c89adfd9dbae75739f\transformed\jetified-animation-release\res
-com.example.aiagent.app-transition-1.2.0-6 C:\Users\Administrator\.gradle\caches\8.13\transforms\101ae77978ce185a5ec83914890770ec\transformed\transition-1.2.0\res
-com.example.aiagent.app-jetified-activity-1.8.2-7 C:\Users\Administrator\.gradle\caches\8.13\transforms\1188e0bff60d5c9079adfe6187be95cf\transformed\jetified-activity-1.8.2\res
-com.example.aiagent.app-jetified-ui-tooling-data-release-8 C:\Users\Administrator\.gradle\caches\8.13\transforms\1cad8b6b4036843f01edb24b0a794c7b\transformed\jetified-ui-tooling-data-release\res
-com.example.aiagent.app-jetified-ui-text-release-9 C:\Users\Administrator\.gradle\caches\8.13\transforms\1d6939f3db28fb380045fa21b1da236d\transformed\jetified-ui-text-release\res
-com.example.aiagent.app-jetified-appcompat-resources-1.6.1-10 C:\Users\Administrator\.gradle\caches\8.13\transforms\233a5af15963c79cbd673ef111564f67\transformed\jetified-appcompat-resources-1.6.1\res
-com.example.aiagent.app-jetified-foundation-layout-release-11 C:\Users\Administrator\.gradle\caches\8.13\transforms\2fc2e7305f533303a34b696c45152e28\transformed\jetified-foundation-layout-release\res
-com.example.aiagent.app-jetified-material3-release-12 C:\Users\Administrator\.gradle\caches\8.13\transforms\3461cd35f91bd9815351446ca00136f7\transformed\jetified-material3-release\res
-com.example.aiagent.app-lifecycle-runtime-2.6.1-13 C:\Users\Administrator\.gradle\caches\8.13\transforms\3b731d4d19b1cde227dbd021f0ead311\transformed\lifecycle-runtime-2.6.1\res
-com.example.aiagent.app-coordinatorlayout-1.1.0-14 C:\Users\Administrator\.gradle\caches\8.13\transforms\440eafe4f76571450977a988d1249d25\transformed\coordinatorlayout-1.1.0\res
-com.example.aiagent.app-jetified-datastore-core-release-15 C:\Users\Administrator\.gradle\caches\8.13\transforms\49b77ee0d52e36b1ef084de2773d17a5\transformed\jetified-datastore-core-release\res
-com.example.aiagent.app-jetified-activity-ktx-1.8.2-16 C:\Users\Administrator\.gradle\caches\8.13\transforms\4be5d0ef05898f07a5ccd5c2753d5260\transformed\jetified-activity-ktx-1.8.2\res
-com.example.aiagent.app-jetified-foundation-release-17 C:\Users\Administrator\.gradle\caches\8.13\transforms\52296fddb54b4ec313f22de6960366c4\transformed\jetified-foundation-release\res
-com.example.aiagent.app-core-runtime-2.2.0-18 C:\Users\Administrator\.gradle\caches\8.13\transforms\5394f6aae760d4d2bcee070bf53817a7\transformed\core-runtime-2.2.0\res
-com.example.aiagent.app-jetified-lifecycle-viewmodel-ktx-2.6.1-19 C:\Users\Administrator\.gradle\caches\8.13\transforms\59b9d5b4b97147b30bf9a49962f85d8a\transformed\jetified-lifecycle-viewmodel-ktx-2.6.1\res
-com.example.aiagent.app-jetified-ui-util-release-20 C:\Users\Administrator\.gradle\caches\8.13\transforms\5b1b3e9a07211533e090da9944d7ad08\transformed\jetified-ui-util-release\res
-com.example.aiagent.app-jetified-core-ktx-1.12.0-21 C:\Users\Administrator\.gradle\caches\8.13\transforms\5cd1ba8e62e7eee9826340d82468f304\transformed\jetified-core-ktx-1.12.0\res
-com.example.aiagent.app-jetified-ui-tooling-release-22 C:\Users\Administrator\.gradle\caches\8.13\transforms\635ff9312ed38e50aea2593ca4759f9d\transformed\jetified-ui-tooling-release\res
-com.example.aiagent.app-drawerlayout-1.1.1-23 C:\Users\Administrator\.gradle\caches\8.13\transforms\6a41e08dd10bc3c084e14fd0534a0a6e\transformed\drawerlayout-1.1.1\res
-com.example.aiagent.app-recyclerview-1.3.0-24 C:\Users\Administrator\.gradle\caches\8.13\transforms\6d5237d88e84c353b9f506337347b0c0\transformed\recyclerview-1.3.0\res
-com.example.aiagent.app-jetified-lifecycle-process-2.6.1-25 C:\Users\Administrator\.gradle\caches\8.13\transforms\6d9cbd2f9f906ddc2f7ff3331e6dc116\transformed\jetified-lifecycle-process-2.6.1\res
-com.example.aiagent.app-jetified-material-ripple-release-26 C:\Users\Administrator\.gradle\caches\8.13\transforms\7007c68ef4790818d2f75424244b0bed\transformed\jetified-material-ripple-release\res
-com.example.aiagent.app-jetified-ui-graphics-release-27 C:\Users\Administrator\.gradle\caches\8.13\transforms\737aee87e4a0baec79fa5ffe47a335d5\transformed\jetified-ui-graphics-release\res
-com.example.aiagent.app-core-1.12.0-28 C:\Users\Administrator\.gradle\caches\8.13\transforms\74f6c017917d6c3fe4c7d10e0256869e\transformed\core-1.12.0\res
-com.example.aiagent.app-jetified-animation-core-release-29 C:\Users\Administrator\.gradle\caches\8.13\transforms\7b4a02c9cc9419263c50a39daf1ee89a\transformed\jetified-animation-core-release\res
-com.example.aiagent.app-jetified-runtime-release-30 C:\Users\Administrator\.gradle\caches\8.13\transforms\7b4c51a041c51cf5311f0a940133472a\transformed\jetified-runtime-release\res
-com.example.aiagent.app-jetified-exoplayer-ui-2.19.1-31 C:\Users\Administrator\.gradle\caches\8.13\transforms\82184dda3e921fc5b4bfe24585b5d9d4\transformed\jetified-exoplayer-ui-2.19.1\res
-com.example.aiagent.app-appcompat-1.6.1-32 C:\Users\Administrator\.gradle\caches\8.13\transforms\8a03777fddc22cbd525872c347d349c4\transformed\appcompat-1.6.1\res
-com.example.aiagent.app-jetified-lifecycle-viewmodel-savedstate-2.6.1-33 C:\Users\Administrator\.gradle\caches\8.13\transforms\8cd77edf806ba5580915d4631f0b94ca\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\res
-com.example.aiagent.app-jetified-annotation-experimental-1.4.0-34 C:\Users\Administrator\.gradle\caches\8.13\transforms\8dc48041cf71886f4560f5ee80f8e46e\transformed\jetified-annotation-experimental-1.4.0\res
-com.example.aiagent.app-jetified-savedstate-ktx-1.2.1-35 C:\Users\Administrator\.gradle\caches\8.13\transforms\8fb19df483a3be43ecfc141c87c7b7c1\transformed\jetified-savedstate-ktx-1.2.1\res
-com.example.aiagent.app-jetified-exoplayer-core-2.19.1-36 C:\Users\Administrator\.gradle\caches\8.13\transforms\939466d1a3b8be6b1573eda09856a7a7\transformed\jetified-exoplayer-core-2.19.1\res
-com.example.aiagent.app-cardview-1.0.0-37 C:\Users\Administrator\.gradle\caches\8.13\transforms\a2e4d384942a61d660ac16fd0cecc766\transformed\cardview-1.0.0\res
-com.example.aiagent.app-jetified-viewpager2-1.0.0-38 C:\Users\Administrator\.gradle\caches\8.13\transforms\a5688486d37c243a2e8834be77322e00\transformed\jetified-viewpager2-1.0.0\res
-com.example.aiagent.app-jetified-extension-mediasession-2.19.1-39 C:\Users\Administrator\.gradle\caches\8.13\transforms\a5a5a91950eea64d09999496ecb4a0c1\transformed\jetified-extension-mediasession-2.19.1\res
-com.example.aiagent.app-jetified-savedstate-1.2.1-40 C:\Users\Administrator\.gradle\caches\8.13\transforms\a99465358889e772b4bed360a6703d83\transformed\jetified-savedstate-1.2.1\res
-com.example.aiagent.app-constraintlayout-2.1.4-41 C:\Users\Administrator\.gradle\caches\8.13\transforms\af4e341134a1ff51b90831548ee82142\transformed\constraintlayout-2.1.4\res
-com.example.aiagent.app-jetified-runtime-saveable-release-42 C:\Users\Administrator\.gradle\caches\8.13\transforms\afc638396bd76bcfbc79e15a2a9ecdec\transformed\jetified-runtime-saveable-release\res
-com.example.aiagent.app-jetified-material-icons-core-release-43 C:\Users\Administrator\.gradle\caches\8.13\transforms\be84e886733bd1e1e84193041aa4eb36\transformed\jetified-material-icons-core-release\res
-com.example.aiagent.app-jetified-lifecycle-runtime-ktx-2.6.1-44 C:\Users\Administrator\.gradle\caches\8.13\transforms\c1f84aa60eec38db60bfd02f68598a30\transformed\jetified-lifecycle-runtime-ktx-2.6.1\res
-com.example.aiagent.app-jetified-startup-runtime-1.1.1-45 C:\Users\Administrator\.gradle\caches\8.13\transforms\c4e2133c64f62ea30138627833e2c6f2\transformed\jetified-startup-runtime-1.1.1\res
-com.example.aiagent.app-lifecycle-livedata-2.6.1-46 C:\Users\Administrator\.gradle\caches\8.13\transforms\c6c95933a0f055088d71b6e2a828165e\transformed\lifecycle-livedata-2.6.1\res
-com.example.aiagent.app-fragment-1.3.6-47 C:\Users\Administrator\.gradle\caches\8.13\transforms\d4b5af8948a98fe4acb6ca27b78fbb67\transformed\fragment-1.3.6\res
-com.example.aiagent.app-jetified-ui-geometry-release-48 C:\Users\Administrator\.gradle\caches\8.13\transforms\db73f30f9d4981c33696711fd8c5d6ce\transformed\jetified-ui-geometry-release\res
-com.example.aiagent.app-jetified-emoji2-1.3.0-49 C:\Users\Administrator\.gradle\caches\8.13\transforms\dc710659dab3b8fcc4dc437f4aa1925d\transformed\jetified-emoji2-1.3.0\res
-com.example.aiagent.app-jetified-activity-compose-1.8.2-50 C:\Users\Administrator\.gradle\caches\8.13\transforms\e0772ddd5069f579d63a8af54a8e1798\transformed\jetified-activity-compose-1.8.2\res
-com.example.aiagent.app-lifecycle-livedata-core-2.6.1-51 C:\Users\Administrator\.gradle\caches\8.13\transforms\e6b60826a1a0e7e6d4c7d116f14ce4be\transformed\lifecycle-livedata-core-2.6.1\res
-com.example.aiagent.app-jetified-customview-poolingcontainer-1.0.0-52 C:\Users\Administrator\.gradle\caches\8.13\transforms\e7759f602788a69782904eccb50f4c09\transformed\jetified-customview-poolingcontainer-1.0.0\res
-com.example.aiagent.app-lifecycle-viewmodel-2.6.1-53 C:\Users\Administrator\.gradle\caches\8.13\transforms\eea101a0606f4c87186423ba4335557f\transformed\lifecycle-viewmodel-2.6.1\res
-com.example.aiagent.app-jetified-ui-unit-release-54 C:\Users\Administrator\.gradle\caches\8.13\transforms\f3927ec27451187a44da54d2328a84fd\transformed\jetified-ui-unit-release\res
-com.example.aiagent.app-media-1.7.0-55 C:\Users\Administrator\.gradle\caches\8.13\transforms\f3cc8e0dc89ad6c58a53b8cffae524f6\transformed\media-1.7.0\res
-com.example.aiagent.app-jetified-emoji2-views-helper-1.3.0-56 C:\Users\Administrator\.gradle\caches\8.13\transforms\f73c663435c19624238147b5b62982d1\transformed\jetified-emoji2-views-helper-1.3.0\res
-com.example.aiagent.app-material-1.11.0-57 C:\Users\Administrator\.gradle\caches\8.13\transforms\fe346daf45279016449983d2c59c188a\transformed\material-1.11.0\res
-com.example.aiagent.app-jetified-ui-release-58 C:\Users\Administrator\.gradle\caches\8.13\transforms\fe44a46d001efd86ce7161d2c0992ae5\transformed\jetified-ui-release\res
-com.example.aiagent.app-pngs-59 F:\AI\assitant Agent Apk\app\build\generated\res\pngs\debug
-com.example.aiagent.app-resValues-60 F:\AI\assitant Agent Apk\app\build\generated\res\resValues\debug
-com.example.aiagent.app-packageDebugResources-61 F:\AI\assitant Agent Apk\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.aiagent.app-packageDebugResources-62 F:\AI\assitant Agent Apk\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.aiagent.app-merged_res-63 F:\AI\assitant Agent Apk\app\build\intermediates\merged_res\debug
-com.example.aiagent.app-debug-64 F:\AI\assitant Agent Apk\app\src\debug\res
-com.example.aiagent.app-main-65 F:\AI\assitant Agent Apk\app\src\main\res
+com.example.aiagent.app-jetified-foundation-layout-release-0 C:\Users\Administrator\.gradle\caches\8.13\transforms\009e63e28fa7ce32c1337450634ce1b3\transformed\jetified-foundation-layout-release\res
+com.example.aiagent.app-jetified-animation-core-release-1 C:\Users\Administrator\.gradle\caches\8.13\transforms\06ef1272f6f4403daa4e8aec741aea58\transformed\jetified-animation-core-release\res
+com.example.aiagent.app-jetified-play-services-base-18.1.0-2 C:\Users\Administrator\.gradle\caches\8.13\transforms\07ff9ebae8f6b78d2a41cfed389d4fa1\transformed\jetified-play-services-base-18.1.0\res
+com.example.aiagent.app-jetified-ui-graphics-release-3 C:\Users\Administrator\.gradle\caches\8.13\transforms\116391561eca075b0fd8b444f3664f3b\transformed\jetified-ui-graphics-release\res
+com.example.aiagent.app-jetified-datastore-preferences-release-4 C:\Users\Administrator\.gradle\caches\8.13\transforms\13f7f9e453ce28b796a06ee69353a4a8\transformed\jetified-datastore-preferences-release\res
+com.example.aiagent.app-core-runtime-2.2.0-5 C:\Users\Administrator\.gradle\caches\8.13\transforms\164d3a76e34c4a3b21c92fc010de7e6a\transformed\core-runtime-2.2.0\res
+com.example.aiagent.app-material-1.11.0-6 C:\Users\Administrator\.gradle\caches\8.13\transforms\1d2fbcf33058ead03eee99db37458adf\transformed\material-1.11.0\res
+com.example.aiagent.app-jetified-runtime-release-7 C:\Users\Administrator\.gradle\caches\8.13\transforms\1fd3321c7c6fda4c516472a4b3754410\transformed\jetified-runtime-release\res
+com.example.aiagent.app-jetified-lifecycle-runtime-ktx-2.6.2-8 C:\Users\Administrator\.gradle\caches\8.13\transforms\21584a55666e2b29bda6ff56a9ca965e\transformed\jetified-lifecycle-runtime-ktx-2.6.2\res
+com.example.aiagent.app-lifecycle-viewmodel-2.6.2-9 C:\Users\Administrator\.gradle\caches\8.13\transforms\21e856849d67cdb59a57de5ed3e1edb8\transformed\lifecycle-viewmodel-2.6.2\res
+com.example.aiagent.app-lifecycle-livedata-2.6.2-10 C:\Users\Administrator\.gradle\caches\8.13\transforms\28b57d48ee1604f7259b04c854937a28\transformed\lifecycle-livedata-2.6.2\res
+com.example.aiagent.app-jetified-lifecycle-viewmodel-ktx-2.6.2-11 C:\Users\Administrator\.gradle\caches\8.13\transforms\29ac86242ea7e7dd2e55da160a841fbb\transformed\jetified-lifecycle-viewmodel-ktx-2.6.2\res
+com.example.aiagent.app-jetified-activity-compose-1.8.2-12 C:\Users\Administrator\.gradle\caches\8.13\transforms\31b695f54327997985b557e8e979aa1e\transformed\jetified-activity-compose-1.8.2\res
+com.example.aiagent.app-jetified-play-services-basement-18.1.0-13 C:\Users\Administrator\.gradle\caches\8.13\transforms\3460b6c2f3d1bdec37694a451a98eb62\transformed\jetified-play-services-basement-18.1.0\res
+com.example.aiagent.app-jetified-runtime-saveable-release-14 C:\Users\Administrator\.gradle\caches\8.13\transforms\37d0fca6661400c6a5228f2afe330dd5\transformed\jetified-runtime-saveable-release\res
+com.example.aiagent.app-jetified-savedstate-ktx-1.2.1-15 C:\Users\Administrator\.gradle\caches\8.13\transforms\3a751df2ba3cac63365fd5f672e4da4d\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.aiagent.app-jetified-profileinstaller-1.3.0-16 C:\Users\Administrator\.gradle\caches\8.13\transforms\3de9ff2ca7a1ed7839171c50d2666c7e\transformed\jetified-profileinstaller-1.3.0\res
+com.example.aiagent.app-jetified-activity-ktx-1.8.2-17 C:\Users\Administrator\.gradle\caches\8.13\transforms\3e8df66b1b8f60f41c6bdd8470c0fc75\transformed\jetified-activity-ktx-1.8.2\res
+com.example.aiagent.app-jetified-core-ktx-1.12.0-18 C:\Users\Administrator\.gradle\caches\8.13\transforms\3fe79e8f7fc178e27742823022410abd\transformed\jetified-core-ktx-1.12.0\res
+com.example.aiagent.app-cardview-1.0.0-19 C:\Users\Administrator\.gradle\caches\8.13\transforms\4175a85e0b6375b1faead55137ab7a9b\transformed\cardview-1.0.0\res
+com.example.aiagent.app-jetified-ui-util-release-20 C:\Users\Administrator\.gradle\caches\8.13\transforms\49710f75b4730a0cc6305d46e90b3b7e\transformed\jetified-ui-util-release\res
+com.example.aiagent.app-jetified-datastore-core-release-21 C:\Users\Administrator\.gradle\caches\8.13\transforms\4cd5252517bb20695b974c3827bcd367\transformed\jetified-datastore-core-release\res
+com.example.aiagent.app-jetified-animation-release-22 C:\Users\Administrator\.gradle\caches\8.13\transforms\4da303cf419ad97cb214e9a82ce2bce9\transformed\jetified-animation-release\res
+com.example.aiagent.app-jetified-lifecycle-viewmodel-savedstate-2.6.2-23 C:\Users\Administrator\.gradle\caches\8.13\transforms\53e95520363ca8ba1619b663764bc3eb\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\res
+com.example.aiagent.app-jetified-fragment-ktx-1.6.2-24 C:\Users\Administrator\.gradle\caches\8.13\transforms\565f576a92a4e3092bae00c48712c6ab\transformed\jetified-fragment-ktx-1.6.2\res
+com.example.aiagent.app-jetified-translate-17.0.2-25 C:\Users\Administrator\.gradle\caches\8.13\transforms\59ef81628693f96001f9c1448b51ee46\transformed\jetified-translate-17.0.2\res
+com.example.aiagent.app-jetified-emoji2-1.3.0-26 C:\Users\Administrator\.gradle\caches\8.13\transforms\655115b5aeccdaf6d9f0b650596ce08d\transformed\jetified-emoji2-1.3.0\res
+com.example.aiagent.app-jetified-ui-release-27 C:\Users\Administrator\.gradle\caches\8.13\transforms\67da2e3bdb3c4cff550fb1ad45c58f32\transformed\jetified-ui-release\res
+com.example.aiagent.app-jetified-security-crypto-1.1.0-alpha06-28 C:\Users\Administrator\.gradle\caches\8.13\transforms\6981f0541e5442897026fabd6ab9c01e\transformed\jetified-security-crypto-1.1.0-alpha06\res
+com.example.aiagent.app-drawerlayout-1.1.1-29 C:\Users\Administrator\.gradle\caches\8.13\transforms\6b257ef480981835900046aa8f5528d9\transformed\drawerlayout-1.1.1\res
+com.example.aiagent.app-jetified-material-release-30 C:\Users\Administrator\.gradle\caches\8.13\transforms\6ca1a813cf9f44b9996d3be47cbe09f1\transformed\jetified-material-release\res
+com.example.aiagent.app-core-1.12.0-31 C:\Users\Administrator\.gradle\caches\8.13\transforms\6f014c978369a8f3a73c71af4822625f\transformed\core-1.12.0\res
+com.example.aiagent.app-jetified-appcompat-resources-1.6.1-32 C:\Users\Administrator\.gradle\caches\8.13\transforms\75f4cd9e3dd6436c8d02e6157dcf5f48\transformed\jetified-appcompat-resources-1.6.1\res
+com.example.aiagent.app-jetified-savedstate-1.2.1-33 C:\Users\Administrator\.gradle\caches\8.13\transforms\88934cc6af0439cab8510d7b4645cd71\transformed\jetified-savedstate-1.2.1\res
+com.example.aiagent.app-jetified-ui-tooling-data-release-34 C:\Users\Administrator\.gradle\caches\8.13\transforms\8df7c52d3e6ef316cbc76b52c1bab99f\transformed\jetified-ui-tooling-data-release\res
+com.example.aiagent.app-media-1.7.0-35 C:\Users\Administrator\.gradle\caches\8.13\transforms\93f420356ba59ba078712342a9dfefd3\transformed\media-1.7.0\res
+com.example.aiagent.app-jetified-ui-tooling-preview-release-36 C:\Users\Administrator\.gradle\caches\8.13\transforms\96a313d994d7b86f9200b63cd2c47ae3\transformed\jetified-ui-tooling-preview-release\res
+com.example.aiagent.app-jetified-viewpager2-1.0.0-37 C:\Users\Administrator\.gradle\caches\8.13\transforms\9d5abd269ab58f478a99a9300392cf63\transformed\jetified-viewpager2-1.0.0\res
+com.example.aiagent.app-constraintlayout-2.0.1-38 C:\Users\Administrator\.gradle\caches\8.13\transforms\9d5c2740c33d0240583b4cbb22d4f46b\transformed\constraintlayout-2.0.1\res
+com.example.aiagent.app-jetified-lifecycle-process-2.6.2-39 C:\Users\Administrator\.gradle\caches\8.13\transforms\a0ba11847f8b698d980c05fa3573c602\transformed\jetified-lifecycle-process-2.6.2\res
+com.example.aiagent.app-jetified-lifecycle-livedata-core-ktx-2.6.2-40 C:\Users\Administrator\.gradle\caches\8.13\transforms\a36db0b4fc3257adcbe6dc71f99835d3\transformed\jetified-lifecycle-livedata-core-ktx-2.6.2\res
+com.example.aiagent.app-jetified-foundation-release-41 C:\Users\Administrator\.gradle\caches\8.13\transforms\a5000c3ae7ba85bf97d812199c78a036\transformed\jetified-foundation-release\res
+com.example.aiagent.app-jetified-ui-text-release-42 C:\Users\Administrator\.gradle\caches\8.13\transforms\a5f94770ca2a8d3b4dbfed2f283a704a\transformed\jetified-ui-text-release\res
+com.example.aiagent.app-jetified-datastore-release-43 C:\Users\Administrator\.gradle\caches\8.13\transforms\a847e766d8ed9920cbf768b447a18bff\transformed\jetified-datastore-release\res
+com.example.aiagent.app-jetified-material3-release-44 C:\Users\Administrator\.gradle\caches\8.13\transforms\aa0ba42bce5c540328cd5acdf9235e8d\transformed\jetified-material3-release\res
+com.example.aiagent.app-jetified-exoplayer-ui-2.19.1-45 C:\Users\Administrator\.gradle\caches\8.13\transforms\abe62fcd4e2a2c9d68f4eb5ad4a71073\transformed\jetified-exoplayer-ui-2.19.1\res
+com.example.aiagent.app-fragment-1.6.2-46 C:\Users\Administrator\.gradle\caches\8.13\transforms\aeec9ce75082372d1ac929da2e3d8e70\transformed\fragment-1.6.2\res
+com.example.aiagent.app-jetified-annotation-experimental-1.4.0-47 C:\Users\Administrator\.gradle\caches\8.13\transforms\b9b13808887b641932e1469ca14fd8e5\transformed\jetified-annotation-experimental-1.4.0\res
+com.example.aiagent.app-appcompat-1.6.1-48 C:\Users\Administrator\.gradle\caches\8.13\transforms\bdd0d69c8759240ef9163856d067ebeb\transformed\appcompat-1.6.1\res
+com.example.aiagent.app-lifecycle-livedata-core-2.6.2-49 C:\Users\Administrator\.gradle\caches\8.13\transforms\c0d84c23e456b45f75106c18834552d5\transformed\lifecycle-livedata-core-2.6.2\res
+com.example.aiagent.app-jetified-ui-unit-release-50 C:\Users\Administrator\.gradle\caches\8.13\transforms\c1e52615d5f5245b40be44442f3909e8\transformed\jetified-ui-unit-release\res
+com.example.aiagent.app-jetified-ui-geometry-release-51 C:\Users\Administrator\.gradle\caches\8.13\transforms\c46fb113619dc4fa844f231d07843bbc\transformed\jetified-ui-geometry-release\res
+com.example.aiagent.app-jetified-startup-runtime-1.1.1-52 C:\Users\Administrator\.gradle\caches\8.13\transforms\c780c1a86537ae30dc6c9ca043e0b59a\transformed\jetified-startup-runtime-1.1.1\res
+com.example.aiagent.app-jetified-activity-1.8.2-53 C:\Users\Administrator\.gradle\caches\8.13\transforms\c78b62d5443a5f1ffaf639143750b45a\transformed\jetified-activity-1.8.2\res
+com.example.aiagent.app-jetified-emoji2-views-helper-1.3.0-54 C:\Users\Administrator\.gradle\caches\8.13\transforms\d3ebb8ce0c365ea37044564209b91869\transformed\jetified-emoji2-views-helper-1.3.0\res
+com.example.aiagent.app-jetified-exoplayer-core-2.19.1-55 C:\Users\Administrator\.gradle\caches\8.13\transforms\d577c5baa3f80522e28e9bbfc807a800\transformed\jetified-exoplayer-core-2.19.1\res
+com.example.aiagent.app-lifecycle-runtime-2.6.2-56 C:\Users\Administrator\.gradle\caches\8.13\transforms\d7f0c5dda8ffa54c325af01cfa31aa11\transformed\lifecycle-runtime-2.6.2\res
+com.example.aiagent.app-coordinatorlayout-1.1.0-57 C:\Users\Administrator\.gradle\caches\8.13\transforms\de18327b4bf51c962a5e93cf58eeac6b\transformed\coordinatorlayout-1.1.0\res
+com.example.aiagent.app-jetified-customview-poolingcontainer-1.0.0-58 C:\Users\Administrator\.gradle\caches\8.13\transforms\e6302af90c7141a9645a8c670813353d\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.example.aiagent.app-jetified-extension-mediasession-2.19.1-59 C:\Users\Administrator\.gradle\caches\8.13\transforms\e69d059ac29bd179e093a43f9b1cf29f\transformed\jetified-extension-mediasession-2.19.1\res
+com.example.aiagent.app-recyclerview-1.3.0-60 C:\Users\Administrator\.gradle\caches\8.13\transforms\eaefc0871fa11a906259920319243d46\transformed\recyclerview-1.3.0\res
+com.example.aiagent.app-jetified-material-ripple-release-61 C:\Users\Administrator\.gradle\caches\8.13\transforms\eb90963f39465109774f46c07dd6df2c\transformed\jetified-material-ripple-release\res
+com.example.aiagent.app-transition-1.2.0-62 C:\Users\Administrator\.gradle\caches\8.13\transforms\ed8ad3d050a81011123480873d728831\transformed\transition-1.2.0\res
+com.example.aiagent.app-jetified-ui-tooling-release-63 C:\Users\Administrator\.gradle\caches\8.13\transforms\f264769e643f9b33216e12fd747d1aae\transformed\jetified-ui-tooling-release\res
+com.example.aiagent.app-jetified-material-icons-core-release-64 C:\Users\Administrator\.gradle\caches\8.13\transforms\fcd5deb84a5691372647358c1c30ccb2\transformed\jetified-material-icons-core-release\res
+com.example.aiagent.app-pngs-65 F:\AI\assitant Agent Apk\app\build\generated\res\pngs\debug
+com.example.aiagent.app-resValues-66 F:\AI\assitant Agent Apk\app\build\generated\res\resValues\debug
+com.example.aiagent.app-packageDebugResources-67 F:\AI\assitant Agent Apk\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.aiagent.app-packageDebugResources-68 F:\AI\assitant Agent Apk\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.aiagent.app-merged_res-69 F:\AI\assitant Agent Apk\app\build\intermediates\merged_res\debug
+com.example.aiagent.app-debug-70 F:\AI\assitant Agent Apk\app\src\debug\res
+com.example.aiagent.app-main-71 F:\AI\assitant Agent Apk\app\src\main\res

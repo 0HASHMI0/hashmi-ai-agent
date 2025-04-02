@@ -27,13 +27,22 @@ class AIService : AccessibilityService() {
         }
         serviceInfo = info
 
-        // Initialize AI model
+        // Initialize AI model with default asset model
         aiModel = AIModelManager(this)
         scope.launch {
             try {
-                aiModel.loadModel()
+                aiModel.loadModel(com.example.aiagent.ModelSource.Asset("default_model.tflite"))
             } catch (e: Exception) {
-                // Handle model loading error
+                // Fallback to local model if available
+                val localModel = UserPreferencesManager(this@AIService)
+                    .getSelectedModel()?.let { com.example.aiagent.ModelSource.LocalFile(it) }
+                    ?: com.example.aiagent.ModelSource.HuggingFace("google/gemma-2b-it", "model.tflite")
+                
+                try {
+                    aiModel.loadModel(localModel)
+                } catch (e: Exception) {
+                    // Handle model loading error
+                }
             }
         }
     }
@@ -146,6 +155,7 @@ class AIService : AccessibilityService() {
     private val webBrowser by lazy { WebBrowser(this) }
     private val webScraper by lazy { WebScraper(this) }
     private val excelGenerator by lazy { ExcelGenerator(this) }
+    private val phoneController by lazy { PhoneController(this) }
 
     private suspend fun performAction(response: String, rootNode: AccessibilityNodeInfo) {
         try {

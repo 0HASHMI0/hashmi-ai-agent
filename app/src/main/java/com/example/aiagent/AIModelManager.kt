@@ -172,8 +172,7 @@ class AIModelManager(context: Context) {
         tflite?.close()
     }
 
-    sealed class ModelSource {
-        data class Asset(val path: String) : ModelSource()
+    import com.example.aiagent.ModelSource
         data class LocalFile(val path: String) : ModelSource()
         data class HuggingFace(val repoId: String, val filename: String) : ModelSource()
     }

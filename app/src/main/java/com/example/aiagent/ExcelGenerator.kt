@@ -31,8 +31,10 @@ class ExcelGenerator(context: Context) {
         }
 
         // Auto-size columns
-        for (i in 0 until data.firstOrNull()?.size ?: 0) {
-            sheet.autoSizeColumn(i)
+        data.firstOrNull()?.let { firstRow ->
+            for (i in 0 until firstRow.size) {
+                sheet.autoSizeColumn(i)
+            }
         }
 
         // Save file

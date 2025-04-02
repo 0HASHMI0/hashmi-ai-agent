@@ -3,6 +3,7 @@ package com.example.aiagent
 import android.content.Context
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import org.json.JSONArray
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 

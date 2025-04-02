@@ -171,7 +171,7 @@ fun SettingsPanel(
     var showDevSettings by remember { mutableStateOf(false) }
     var appName by remember { mutableStateOf("AI Agent") }
     val scope = rememberCoroutineScope()
-    val userPrefs = remember { UserPreferencesManager(LocalContext.current) }
+    val userPrefs = UserPreferencesManager(LocalContext.current)
 
     LaunchedEffect(Unit) {
         appName = userPrefs.getAppName()

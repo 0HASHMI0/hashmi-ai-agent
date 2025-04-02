@@ -23,7 +23,7 @@ class UserPreferencesManager(private val context: Context) {
     suspend fun getAppName(): String {
         return context.dataStore.data.map { prefs ->
             prefs[APP_NAME] ?: "AI Agent"
-        }.first()
+        }.firstOrNull() ?: "AI Agent"
     }
 
     suspend fun learnBehavior(behavior: String) {
