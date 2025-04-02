@@ -9,6 +9,19 @@ import kotlinx.coroutines.withContext
 /**
  * Handles loading and executing local Hugging Face models
  */
+/**
+ * Handles loading and execution of local AI models.
+ * Provides operations for managing locally stored models.
+ *
+ * Implementations should ensure thread safety when executing models.
+ *
+ * Example:
+ * ```
+ * val loader = LocalModelLoaderImpl(context)
+ * loader.loadModel("model1")
+ * val result = loader.executeModel("model1", input)
+ * ```
+ */
 interface LocalModelLoader {
     suspend fun loadModel(modelId: String): Boolean
     suspend fun executeModel(modelId: String, input: Any): Result<Any>
@@ -16,7 +29,7 @@ interface LocalModelLoader {
     fun clearModel(modelId: String)
 }
 
-class LocalModelLoaderImpl(context: Context) : LocalModelLoader {
+class LocalModelLoaderImpl(private val context: Context) : LocalModelLoader {
 
     @WorkerThread
     override suspend fun loadModel(modelId: String): Boolean = 
@@ -41,6 +54,18 @@ class LocalModelLoaderImpl(context: Context) : LocalModelLoader {
     }
 
     override fun clearModel(modelId: String) {
-        // TODO: Implement cleanup
+        context.getFileStreamPath(modelId).delete()
     }
+
+    suspend fun saveModel(modelId: String, modelData: ByteArray): Boolean =
+        withContext(Dispatchers.IO) {
+            try {
+                context.openFileOutput(modelId, Context.MODE_PRIVATE).use {
+                    it.write(modelData)
+                }
+                true
+            } catch (e: Exception) {
+                false
+            }
+        }
 }

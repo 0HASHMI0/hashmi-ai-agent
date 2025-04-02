@@ -21,7 +21,22 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.IOException
+import okhttp3.Request
 
+/**
+ * Main application activity handling UI interactions and model execution.
+ * Manages:
+ * - User interface state
+ * - Model selection
+ * - Input/output handling
+ * - Preference management
+ *
+ * Example usage:
+ * ```
+ * // In AndroidManifest.xml:
+ * <activity android:name=".MainActivity" android:exported="true">
+ * ```
+ */
 class MainActivity : AppCompatActivity() {
     private val messages = mutableStateListOf<Message>()
     private val modelOptions = mutableStateListOf(
@@ -133,6 +148,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    companion object {
+        const val ACTION_WAKE_WORD_DETECTED = "com.example.aiagent.WAKE_WORD_DETECTED"
+        const val ACTION_AI_RESPONSE = "com.example.aiagent.AI_RESPONSE"
+        const val EXTRA_AI_RESPONSE = "ai_response"
+    }
+
     override fun onStart() {
         super.onStart()
         registerReceiver(
@@ -160,6 +181,15 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+/**
+ * Composable for application settings dialog.
+ *
+ * @param features List of available features to toggle
+ * @param getState Function to get current feature state
+ * @param onToggle Callback when feature is toggled
+ * @param onDismiss Callback when dialog is dismissed
+ * @param onAppNameChange Callback when app name changes
+ */
 @Composable
 fun SettingsPanel(
     features: List<String>,
@@ -214,34 +244,14 @@ fun SettingsPanel(
                 }
             }
         }
-
-        if (showDevSettings) {
-            Column(
-                modifier = Modifier.padding(top = 16.dp)
-            ) {
-                Text("Developer Settings", style = MaterialTheme.typography.titleSmall)
-                OutlinedTextField(
-                    value = appName,
-                    onValueChange = { appName = it },
-                    label = { Text("App Name") },
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Button(
-                    onClick = {
-                        scope.launch {
-                            userPrefs.saveAppName(appName)
-                            onAppNameChange(appName)
-                        }
-                    },
-                    modifier = Modifier.padding(top = 8.dp)
-                ) {
-                    Text("Save Settings")
-                }
-            }
-        }
     )
 }
 
+/**
+ * Composable for displaying chat messages.
+ *
+ * @param message The message to display with text and user flag
+ */
 @Composable
 fun MessageBubble(message: Message) {
     Box(
@@ -264,11 +274,11 @@ fun MessageBubble(message: Message) {
     }
 }
 
+/**
+ * Chat message data class.
+ *
+ * @property text The message content
+ * @property isUser Whether the message is from the user (true) or AI (false)
+ */
 data class Message(val text: String, val isUser: Boolean)
 
-val ModelSource.displayName: String
-    get() = when (this) {
-        is ModelSource.Asset -> "Built-in: ${path.substringAfterLast("/")}"
-        is ModelSource.LocalFile -> "Local: ${path.substringAfterLast("/")}"
-        is ModelSource.HuggingFace -> "HuggingFace: ${filename}"
-    }

@@ -3,6 +3,7 @@ package com.example.aiagent
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.Intent
+import okhttp3.Request
 import android.net.Uri
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
@@ -34,9 +35,13 @@ class AIService : AccessibilityService() {
                 aiModel.loadModel(com.example.aiagent.ModelSource.Asset("default_model.tflite"))
             } catch (e: Exception) {
                 // Fallback to local model if available
-                val localModel = UserPreferencesManager(this@AIService)
-                    .getSelectedModel()?.let { com.example.aiagent.ModelSource.LocalFile(it) }
-                    ?: com.example.aiagent.ModelSource.HuggingFace("google/gemma-2b-it", "model.tflite")
+                val localModel = try {
+                    UserPreferencesManager(this@AIService)
+                        .getSelectedModel()?.let { com.example.aiagent.ModelSource.LocalFile(it) }
+                        ?: com.example.aiagent.ModelSource.HuggingFace("google/gemma-2b-it", "model.tflite")
+                } catch (e: Exception) {
+                    com.example.aiagent.ModelSource.HuggingFace("google/gemma-2b-it", "model.tflite")
+                }
                 
                 try {
                     aiModel.loadModel(localModel)

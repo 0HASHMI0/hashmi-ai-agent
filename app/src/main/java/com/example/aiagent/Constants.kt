@@ -6,9 +6,3 @@ const val ACTION_USER_MESSAGE = "com.example.aiagent.ACTION_USER_MESSAGE"
 const val EXTRA_USER_MESSAGE = "extra_user_message"
 const val ACTION_WAKE_WORD_DETECTED = "com.example.aiagent.WAKE_WORD_DETECTED"
 const val WAKE_WORD = "hey agent"
-
-sealed class ModelSource {
-    data class Asset(val path: String) : ModelSource()
-    data class LocalFile(val path: String) : ModelSource()
-    data class HuggingFace(val repoId: String, val filename: String) : ModelSource()
-}

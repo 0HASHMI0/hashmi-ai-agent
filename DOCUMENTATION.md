@@ -1,67 +1,34 @@
-# AI Agent Assistant Documentation
+# AI Agent Documentation
 
-## Features
-- Local 7B model execution
-- WhatsApp/WeChat integration
-- Voice interaction
-- Music control
-- App automation
-- Visual/Audio processing
+## Architecture Overview
 
-## Setup Instructions
-1. Build the APK:
-```bash
-cd F:/AI/assitant Agent Apk
-./gradlew assembleDebug
-```
+### Core Components
+- **ModelManager**: Central coordinator for model operations
+- **LocalModelLoader**: Handles local model execution  
+- **CloudModelGateway**: Manages cloud API integration
+- **ModelRouter**: Decides execution path (local vs cloud)
 
-2. Install on device and grant:
-   - Accessibility permissions
-   - Storage permissions
-   - Microphone permissions
-   - Contacts permissions (for messaging apps)
+### UI Components
+- **MainActivity**: Primary user interface
+- **SettingsPanel**: Configuration dialog
+- **MessageBubble**: Chat message display
 
-## Usage Guide
+## Developer Guide
 
-### Model Management
-- Select models from:
-  - Hugging Face repositories
-  - Local storage (/sdcard/Models/)
-  - Built-in assets
+### Getting Started
+1. Clone the repository
+2. Import into Android Studio
+3. Configure API keys in `local.properties`
 
-### Voice Commands
-- Enable voice mode in settings
-- Say "Hey AI" to activate
-- Supported commands:
-  - "Play [song name]"
-  - "Pause music"
-  - "Send message to [contact]"
-  - "Read my messages"
+### Key Concepts
+- Model execution pipeline
+- Preference management
+- Error handling
 
-### WhatsApp/WeChat Integration
-- Automatically detects chat windows
-- Generates context-aware responses
-- Works in background
+## User Guide
 
-### Music Control
-- Voice commands for playback
-- Volume control
-- Playlist management
-
-## Advanced Features
-
-### Visual Processing
-- Image recognition via camera
-- Screenshot analysis
-
-### Audio Processing
-- Real-time voice processing
-- Sound recognition
-- Voice cloning
-
-## Next Steps
-1. Add support for more messaging apps
-2. Implement visual question answering
-3. Add multi-modal capabilities
-4. Improve voice interaction
-5. Add plugin system for extensibility
+### Features
+- Local model execution
+- Cloud model integration
+- Chat interface
+- Settings customization

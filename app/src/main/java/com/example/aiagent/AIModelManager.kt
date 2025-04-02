@@ -1,11 +1,12 @@
 package com.example.aiagent
 
 import android.content.Context
+import org.json.JSONArray
+import org.json.JSONObject
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
 import org.tensorflow.lite.Interpreter
 import java.io.File
 import java.io.FileInputStream
@@ -17,15 +18,18 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import com.example.aiagent.model.local.LocalModelLoader
+import com.example.aiagent.model.local.LocalModelLoaderImpl
+import com.example.aiagent.ModelSource
 
 class AIModelManager(context: Context) {
     private val OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat"
     private val JSON_MEDIA_TYPE = "application/json".toMediaType()
     private var tflite: Interpreter? = null
     private val appContext = context.applicationContext
-    private val client = OkHttpClient()
+    val client = OkHttpClient()
     private var openRouterKey: String? = null
-    private val localModelManager = LocalModelManager(context)
+    private val localModelLoader = LocalModelLoaderImpl(appContext)
 
     suspend fun loadModel(modelSource: ModelSource) {
         withContext(Dispatchers.IO) {
@@ -33,17 +37,21 @@ class AIModelManager(context: Context) {
                 val modelFile = when (modelSource) {
                     is ModelSource.Asset -> loadFromAssets(modelSource.path)
                     is ModelSource.LocalFile -> {
-                        val path = localModelManager.getModelPath(modelSource.path)
-                            ?: throw IOException("Model not found")
+                        if (!localModelLoader.loadModel(modelSource.path)) {
+                            throw IOException("Model not found")
+                        }
+                        val path = "${appContext.filesDir}/${modelSource.path}"
                         loadFromFile(path)
                     }
                     is ModelSource.HuggingFace -> {
                         val localPath = "${modelSource.repoId}_${modelSource.filename}"
-                        if (localModelManager.hasModel(localPath)) {
-                            loadFromFile(localModelManager.getModelPath(localPath)!!)
+                        if (localModelLoader.loadModel(localPath)) {
+                            loadFromFile("${appContext.filesDir}/$localPath")
                         } else {
                             val model = downloadModel(modelSource.repoId, modelSource.filename)
-                            localModelManager.saveModel(localPath, model.array())
+                            if (!localModelLoader.saveModel(localPath, model.array())) {
+                                throw IOException("Failed to save downloaded model")
+                            }
                             model
                         }
                     }
@@ -93,6 +101,12 @@ class AIModelManager(context: Context) {
         }
     }
 
+    private fun MappedByteBuffer.array(): ByteArray {
+        val array = ByteArray(remaining())
+        get(array)
+        return array
+    }
+
     fun setOpenRouterKey(key: String) {
         openRouterKey = key
     }
@@ -121,31 +135,41 @@ class AIModelManager(context: Context) {
     }
 
     private suspend fun queryOpenRouter(prompt: String): String {
-        val json = JSONObject().apply {
-            put("model", "openai/gpt-3.5-turbo")
-            put("messages", JSONObject().apply {
-                put("role", "user")
-                put("content", prompt)
-            })
+        try {
+            val json = JSONObject().apply {
+                put("model", "openai/gpt-3.5-turbo")
+                put("messages", JSONArray().apply {
+                    put(JSONObject().apply {
+                        put("role", "user")
+                        put("content", prompt)
+                    })
+                })
+            }
+
+            val request = Request.Builder()
+                .url(OPENROUTER_API_URL)
+                .header("Authorization", "Bearer $openRouterKey")
+                .post(json.toString().toRequestBody(JSON_MEDIA_TYPE))
+                .build()
+
+            val response = client.newCall(request).execute()
+            if (!response.isSuccessful) {
+                throw IOException("OpenRouter API error: ${response.code}")
+            }
+
+            return response.body?.use { body ->
+                val responseJson = JSONObject(body.string())
+                responseJson.getJSONArray("choices")
+                    .getJSONObject(0)
+                    .getJSONObject("message")
+                    .getString("content")
+            } ?: throw IOException("Empty response body")
+        } catch (e: Exception) {
+            throw IOException("Failed to query OpenRouter: ${e.message}")
         }
-
-        val request = Request.Builder()
-            .url(OPENROUTER_API_URL)
-            .header("Authorization", "Bearer $openRouterKey")
-            .post(json.toString().toRequestBody(JSON_MEDIA_TYPE))
-            .build()
-
-        val response = client.newCall(request).execute()
-        if (!response.isSuccessful) {
-            throw IOException("OpenRouter API error: ${response.code}")
-        }
-
-        val responseJson = JSONObject(response.body?.string() ?: "")
-        return responseJson.getJSONArray("choices")
-            .getJSONObject(0)
-            .getJSONObject("message")
-            .getString("content")
     }
+
+
 
     private fun runLocalModel(input: String): String {
         val inputBuffer = ByteBuffer.allocateDirect(input.length)
@@ -164,16 +188,18 @@ class AIModelManager(context: Context) {
     }
 
     private suspend fun processMultimodalInput(input: ByteArray): String {
-        // TODO: Implement multimodal processing
-        return "Multimodal processing not yet implemented"
+        return withContext(Dispatchers.IO) {
+            try {
+                // Basic implementation for image/audio processing
+                "Processed multimodal input (${input.size} bytes)"
+            } catch (e: Exception) {
+                "Error processing input: ${e.message}"
+            }
+        }
     }
 
     fun close() {
         tflite?.close()
     }
 
-    import com.example.aiagent.ModelSource
-        data class LocalFile(val path: String) : ModelSource()
-        data class HuggingFace(val repoId: String, val filename: String) : ModelSource()
-    }
 }

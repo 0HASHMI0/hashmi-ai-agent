@@ -8,6 +8,19 @@ import com.example.aiagent.model.local.LocalModelLoader
 /**
  * Decides where to execute models based on performance, cost, and availability
  */
+/**
+ * Decides execution path between local and cloud models.
+ * Implements fallback logic and performance optimization.
+ *
+ * @property localLoader Local model execution handler
+ * @property cloudGateway Remote model execution handler
+ *
+ * Example:
+ * ```
+ * val router = ModelRouter(localLoader, cloudGateway)
+ * val result = router.execute("model1", input, preferLocal = true)
+ * ```
+ */
 class ModelRouter(
     private val context: Context,
     private val localModelLoader: LocalModelLoader

@@ -1,6 +1,8 @@
 package com.example.aiagent.model.cloud
 
 import android.content.Context
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
 import androidx.security.crypto.EncryptedSharedPreferences
 import com.example.aiagent.model.ModelManager
 import kotlinx.coroutines.Dispatchers
@@ -11,6 +13,19 @@ import org.json.JSONObject
 
 /**
  * Handles cloud-based model execution via OpenRouter API
+ */
+/**
+ * Handles remote model execution via cloud API.
+ * Manages API credentials and request/response handling.
+ *
+ * @property context Android context for preferences
+ * @property securePrefs Encrypted storage for API keys
+ *
+ * Example:
+ * ```
+ * val gateway = CloudModelGateway(context, securePrefs)
+ * val result = gateway.executeModel("gpt-4", prompt)
+ * ```
  */
 class CloudModelGateway(
     private val context: Context,

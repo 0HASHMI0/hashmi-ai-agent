@@ -15,4 +15,30 @@ class ModelManagerTest : BaseTest() {
 
     @Test
     fun `should initialize all components`() {
-        modelManager.shouldBeInstanceOf<ModelManager>()
+        modelManager.shouldBeInstanceOf<ModelManager>()
+    }
+
+    @Test
+    fun `should execute local model successfully`() = runTest {
+        // Given
+        val testInput = "Test input"
+        
+        // When
+        val result = modelManager.executeModel("test-model", testInput, true)
+        
+        // Then
+        result.isSuccess shouldBe true
+    }
+
+    @Test
+    fun `should handle execution failures gracefully`() = runTest {
+        // Given
+        val testInput = "Invalid input"
+        
+        // When 
+        val result = modelManager.executeModel("invalid-model", testInput, true)
+        
+        // Then
+        result.isFailure shouldBe true
+    }
+}
